@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
+import { Link } from 'react-router-dom';
 
 
 class AllProductsLink extends Component {
@@ -37,13 +38,15 @@ componentDidMount(){
 	  		{
 	  			this.state.productsAllLink.map((product)=>{
 	  		return 	<div className="all__container__details">
-		  				<div>
-				  			<img src={product.imageLink}/>
-				  		</div>
-				  		<div className="all__product__details">
-					  		<p>{product.item}</p>
-					  		<p>{product.price}</p>
-					  	</div>
+		  				<Link to={`/product/${product._id}`}>
+			  				<div>
+					  			<img src={product.imageLink}/>
+					  		</div>
+					  		<div className="all__product__details">
+						  		<p>{product.item}</p>
+						  		<p>{product.price}</p>
+						  	</div>
+					  	</Link>
 				  	</div>
 		  	})}
 	  	</div>

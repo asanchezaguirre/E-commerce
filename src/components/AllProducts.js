@@ -8,7 +8,7 @@ class AllProducts extends Component {
 	constructor(){
 	super()
 		this.state = {
-	productsAll: []
+		productsAll: []
 	}
 }
 
@@ -42,18 +42,22 @@ componentDidMount(){
 	  		{
 	  			this.state.productsAll.map((product)=>{
 	  		return 	<div className="container__details">
-		  				<div>
-				  			<img src={product.imageLink}/>
-				  		</div>
-				  		<div className="product__details">
-					  		<p>{product.item}</p>
-					  		<p>{product.price}</p>
-					  	</div>
+		  				<Link to={`/product/${product._id}`}>
+			  				<div>
+					  			<img src={product.imageLink} alt="Logo de Mallory Furniture"></img>
+					  		</div>
+					  		<div className="product__details">
+						  		<p>{product.item}</p>
+						  		<p>{product.price}</p>
+						  	</div>
+					  	</Link>
 				  	</div>
 		  	})}
 	  	</div>
 	  	<div className="container__button__all">
-	  		<button className="button__all">All Products</button>
+	  		<Link to="/all-products">
+	  			<button className="button__all">All Products</button>
+	  		</Link>
 	  	</div>
 	  	<div className="subtitulos">
 	  		<h2>Browse by Categories</h2>

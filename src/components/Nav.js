@@ -15,13 +15,14 @@ class Nav extends Component {
     			<li>|</li>
     			<Link to="/all-products"><li>All</li></Link>
     		</ul>
-    		<ul className="navegacion__seccion2">
-    			<li>Seating</li>
-    			<li>Tables</li>
-    			<li>Desks</li>
-    			<li>Storage</li>
-    			<li>Bedroom</li>
-    			<li>Misc</li>
+    		
+            <ul className="navegacion__seccion2">
+    			<Link to='/category/seating'><li>Seating</li></Link>
+    			<Link to='/category/tables'><li>Tables</li></Link>
+    			<Link to='/category/desks'><li>Desks</li></Link>
+    			<Link to='/category/storage'><li>Storage</li></Link>
+    			<Link to='/category/bedroom'><li>Bedroom</li></Link>
+    			<Link to='/category/misc'><li>Misc</li></Link>
     			<li>|</li>
     		</ul>
     		<i className="fas fa-shopping-cart"></i>

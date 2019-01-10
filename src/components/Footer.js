@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logoBlack from '../images/mf-logo-black.svg'
 
+import { Link } from 'react-router-dom';
+
 class Footer extends Component {
   render() {
     return (
@@ -19,9 +21,9 @@ class Footer extends Component {
 		    	<div className="footer__menu-2">
 		    		<p className="footer__title">Categories</p>
 		    		<ul>
-		    			<li>Seating</li>
-		    			<li>Tables</li>
-		    			<li>Misc</li>
+		    			<Link to='/category/seating'><li>Seating</li></Link>
+		    			<Link to='/category/tables'><li>Tables</li></Link>
+		    			<Link to='/category/misc'><li>Misc</li></Link>
 		    		</ul>
 		    	</div>
 		    	<div className="footer__menu-3">
