@@ -64,12 +64,12 @@ componentDidMount(){
 	  		<p>Explore by furniture type.</p>
 	  	</div>
 	  	<div className="buttons__landing">
-	  		<button>Seating</button>
-	  		<button>Tables</button>
-	  		<button>Desks</button>
-	  		<button>Bedroom</button>
-	  		<button>Storage</button>
-	  		<button>Misc</button>
+	  		<Link to='/category/seating'><button>Seating</button></Link>
+	  		<Link to='/category/tables'><button>Tables</button></Link>
+	  		<Link to='/category/desks'><button>Desks</button></Link>
+	  		<Link to='/category/bedroom'><button>Bedroom</button></Link>
+	  		<Link to='/category/storage'><button>Storage</button></Link>
+	  		<Link to='/category/miscellaneous'><button>Misc</button></Link>
 	  	</div>
 
       </div>

@@ -22,7 +22,7 @@ class App extends Component {
         	<Route exact path='/terms' component={Terms} />
         	<Route exact path='/all-products' component={AllProductsLink} />
         	<Route path='/product/:productId' component={ Product } />
-        	<Route path='./category/:productCategory' component={ Category } />
+        	<Route path='/category/:categoryType' component={ Category } />
         </Switch>
         <Footer />
       </div>

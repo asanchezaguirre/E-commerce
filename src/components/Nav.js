@@ -22,7 +22,7 @@ class Nav extends Component {
     			<Link to='/category/desks'><li>Desks</li></Link>
     			<Link to='/category/storage'><li>Storage</li></Link>
     			<Link to='/category/bedroom'><li>Bedroom</li></Link>
-    			<Link to='/category/misc'><li>Misc</li></Link>
+    			<Link to='/category/miscellaneous'><li>Misc</li></Link>
     			<li>|</li>
     		</ul>
     		<i className="fas fa-shopping-cart"></i>

@@ -1,52 +1,62 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
+import { Link } from 'react-router-dom';
 
 class Category extends Component {
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 
 		this.state= {
-			category: []
-		}
+			categories: []
+		};
 	}
 
 componentDidMount(){
-	this.showProduct(this.props.match.params.productCategory);
+	this.showProduct(this.props.match.params.categoryType);
 }
 
-showCategory = (productCategory) => {
-	var API = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${productCategory}`;
+showProduct = (categoryType) => {
+	var API = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${categoryType}`;
 
 	request
    .get(API)
    .then(res => {
-      var categoryAll = res.body;
-      	this.setState({category: categoryAll})
+      var categories = res.body;
+      	this.setState({categories: categories})
 
    });
 }
+
+componentDidUpdate(prevProps) {
+  this.showProduct(prevProps.match.params.categoryType);
+}
+
   render() {
+  
     return (
       <div>
-      	<div>
-      		<img ></img>
-      	</div>
-      		<div></div>
-      		<p></p>
-      		<hr/>
-      		<div>
-      			<div></div>
-      			<div></div>
-      			<div></div>
-      			<div></div>
-      		</div>
-      	<div>
-      	</div>
+
+      	{
+	  			this.state.categories.map((product, i)=>{
+	  		return 	<div key={i} className="container__details">
+		  				<Link to={`/product/${product._id}`}>
+			  				<div>
+					  			<img src={product.imageLink} alt="Logo de Mallory Furniture"></img>
+					  		</div>
+					  		<div className="product__details">
+						  		<p>{product.item}</p>
+						  		<p>{product.price}</p>
+						  	</div>
+					  	</Link>
+				  	</div>
+		  	})}
       </div>
     );
   }
 }
 
 export default Category;
+
+
 
