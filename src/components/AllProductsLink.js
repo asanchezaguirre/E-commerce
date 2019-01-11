@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import request from 'superagent';
+import request from 'superagent'; 
 import { Link } from 'react-router-dom';
 
 
@@ -20,6 +20,31 @@ componentDidMount(){
 	});
 }
 
+ allItems = (e) => {
+    request
+    .get('https://mallory-furniture-admin.now.sh/api/v1/products')
+    .then((res)=>{
+    	var productsAll = res.body;
+      this.setState({ productsAllLink: productsAll
+      })
+    })
+  }
+
+  onSale = (e) => {
+    request
+    .get('https://mallory-furniture-admin.now.sh/api/v1/products')
+    .then((res)=>{
+
+    var onlyOnsale = this.state.productsAllLink.filter((product) => {
+      return product.onSale === true
+    })
+    this.setState({
+      productsAllLink: onlyOnsale
+      })
+    })
+  }
+
+
 
   render() {
     return (
@@ -27,12 +52,12 @@ componentDidMount(){
       	<h2>All Products</h2>
       	<p>All available listings</p>
       	<div className="all__container__buttons">
-      		<button>All Items</button>
-      		<button>On sale</button>
+      		<button onClick={this.allItems}>All Items</button>
+      		<button onClick={this.onSale}>On sale</button>
       	</div>
       	<div className="all__container__count">
-      		<div className="all__container__count-1">61</div>
-      		<div className="all__container__count-2">items showing</div>
+      		<div className="all__container__count-1">{this.state.productsAllLink.length}</div>
+      		<div className=" onClick={this.fetchProductsOnSale}all__container__count-2">items showing</div>
       	</div>
       	<div className="all__container__products">
 	  		{

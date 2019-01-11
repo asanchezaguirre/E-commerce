@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 
+
+
 import { Link } from 'react-router-dom';
 
 class Category extends Component {
 	constructor(props){
 		super(props);
-
 		this.state= {
 			categories: []
 		};
 	}
 
 componentDidMount(){
-	this.showProduct(this.props.match.params.categoryType);
-}
-
-showProduct = (categoryType) => {
+	var {categoryType} = this.props.match.params;
 	var API = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${categoryType}`;
 
 	request
@@ -27,16 +25,62 @@ showProduct = (categoryType) => {
 
    });
 }
-
 componentDidUpdate(prevProps) {
-  this.showProduct(prevProps.match.params.categoryType);
+    var {categoryType} = this.props.match.params;
+    if(this.props.match.params !== prevProps.match.params){
+      request
+      .get(`https://mallory-furniture-admin.now.sh/api/v1/products?category=${categoryType}`)
+        .then((res) => {
+          this.setState({
+          categories: res.body
+        });
+      })
+    }
 }
+
+allItems = (e) => {
+	var {categoryType}  = this.props.match.params;
+    request
+    .get(`https://mallory-furniture-admin.now.sh/api/v1/products?category=${categoryType}`)
+    .then((res) =>{
+    this.setState({
+      categories: res.body
+      })
+    })
+  }
+
+  onSale = (e) => {
+  	var {categoryType}  = this.props.match.params;
+    request
+    .get(`https://mallory-furniture-admin.now.sh/api/v1/products?category=${categoryType}`)
+    .then((res) => {
+    var showOnSale = this.state.categories.filter((item) =>{
+      return item.onSale === true
+      })
+    this.setState({
+      categories: showOnSale
+      })
+    });
+  };
+
+
 
   render() {
   
     return (
-      <div>
-
+      <div className="all__container">
+      <h2>All Products</h2>
+      	<p>All available listings</p>
+      	<div className="all__container__buttons">
+      		<button onClick={this.allItems}>All Items</button>
+      		<button onClick={this.onSale}>On sale</button>
+      	</div>
+      	<div className="all__container__count">
+      		<div className="all__container__count-1">{this.state.categories.length}</div>
+      		<div className=" onClick={this.fetchProductsOnSale}all__container__count-2">items showing</div>
+      	</div>
+      		
+      	<div className="all__container__products">
       	{
 	  			this.state.categories.map((product, i)=>{
 	  		return 	<div key={i} className="container__details">
@@ -51,6 +95,7 @@ componentDidUpdate(prevProps) {
 					  	</Link>
 				  	</div>
 		  	})}
+	  	</div>
       </div>
     );
   }
