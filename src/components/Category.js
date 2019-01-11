@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import request from 'superagent';
 
 
-
 import { Link } from 'react-router-dom';
 
 class Category extends Component {
@@ -63,12 +62,39 @@ allItems = (e) => {
     });
   };
 
+ //Switch es como un if 
+changeImage = (categoryType) => {
+	switch (categoryType){
+		case "seating":
+			return require ("../images/category-seating.png")
+			break;
+		case 'tables':
+			return  require ("../images/category-tables.png")
+			break;
+		case 'desks':
+			return  require ("../images/category-desks.png")
+			break;
+		case 'storage':
+			return  require ("../images/category-storage.png")
+			break;
+		case 'bedroom':
+			return require ("../images/category-bedroom.png")
+			break;
+		case 'miscellaneous':
+			return require ("../images/category-miscellaneous.png")
+			break;
+		
+
+	}
+}
+
 
 
   render() {
   
     return (
       <div className="all__container">
+      <img src={this.changeImage(this.props.match.params.categoryType)}></img>
       <h2>All Products</h2>
       	<p>All available listings</p>
       	<div className="all__container__buttons">
