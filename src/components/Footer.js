@@ -21,9 +21,9 @@ class Footer extends Component {
 		    	<div className="footer__menu-2">
 		    		<p className="footer__title">Categories</p>
 		    		<ul>
-		    			<Link to='/category/seating'><li>Seating</li></Link>
-		    			<Link to='/category/tables'><li>Tables</li></Link>
-		    			<Link to='/category/miscellaneous'><li>Misc</li></Link>
+		    			<Link className="underline" to='/category/seating'><li>Seating</li></Link>
+		    			<Link className="underline" to='/category/tables'><li>Tables</li></Link>
+		    			<Link className="underline" to='/category/miscellaneous'><li>Misc</li></Link>
 		    		</ul>
 		    	</div>
 		    	<div className="footer__menu-3">

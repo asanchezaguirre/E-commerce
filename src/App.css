@@ -302,6 +302,6 @@ body {
   width: 101%;
 }
 
-Link {
-  Text-decoration-line: none;
+.underline {
+  text-decoration-line: none;
 }

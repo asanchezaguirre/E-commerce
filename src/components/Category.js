@@ -112,12 +112,12 @@ changeImage = (categoryType) => {
       	{
 	  			this.state.categories.map((product, i)=>{
 	  		return 	<div key={i} className="container__details">
-		  				<Link to={`/product/${product._id}`}>
+		  				<Link className="underline" to={`/product/${product._id}`}>
 			  				<div>
 					  			<img src={product.imageLink} alt="Logo de Mallory Furniture"></img>
 					  		</div>
 					  		<div className="product__details">
-						  		<p>{product.item}</p>
+						  		<h4>{product.item}</h4>
 						  		<p>{product.price}</p>
 						  	</div>
 					  	</Link>

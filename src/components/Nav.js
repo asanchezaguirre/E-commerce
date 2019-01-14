@@ -11,19 +11,19 @@ class Nav extends Component {
         	<header className="navegacion">
         		<Link to="/"><img src={logo} alt= "Mallory Furniture"></img></Link>
         		<ul className="navegacion__seccion1">
-        			<Link to="/about"><li>About</li></Link>
-        			<Link to='/terms'><li>Terms + Conditions</li></Link>
+        			<Link className="underline" to="/about"><li>About</li></Link>
+        			<Link className="underline" to='/terms'><li>Terms + Conditions</li></Link>
         			<li>|</li>
-        			<Link to="/all-products"><li>All</li></Link>
+        			<Link className="underline" to="/all-products"><li>All</li></Link>
         		</ul>
         		
                 <ul className="navegacion__seccion2">
-        			<Link to='/category/seating'><li>Seating</li></Link>
-        			<Link to='/category/tables'><li>Tables</li></Link>
-        			<Link to='/category/desks'><li>Desks</li></Link>
-        			<Link to='/category/storage'><li>Storage</li></Link>
-        			<Link to='/category/bedroom'><li>Bedroom</li></Link>
-        			<Link to='/category/miscellaneous'><li>Misc</li></Link>
+        			<Link className="underline" to='/category/seating'><li>Seating</li></Link>
+        			<Link className="underline" to='/category/tables'><li>Tables</li></Link>
+        			<Link className="underline" to='/category/desks'><li>Desks</li></Link>
+        			<Link className="underline" to='/category/storage'><li>Storage</li></Link>
+        			<Link className="underline" to='/category/bedroom'><li>Bedroom</li></Link>
+        			<Link className="underline" to='/category/miscellaneous'><li>Misc</li></Link>
         			<li>|</li>
         		</ul>
                 <button onClick={this.props.displayCart}>

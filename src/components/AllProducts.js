@@ -42,7 +42,7 @@ componentDidMount(){
 	  		{
 	  			this.state.productsAll.map((product)=>{
 	  		return 	<div className="container__details">
-		  				<Link to={`/product/${product._id}`}>
+		  				<Link className="underline" to={`/product/${product._id}`}>
 			  				<div>
 					  			<img src={product.imageLink} alt="Logo de Mallory Furniture"></img>
 					  		</div>
@@ -55,7 +55,7 @@ componentDidMount(){
 		  	})}
 	  	</div>
 	  	<div className="container__button__all">
-	  		<Link to="/all-products">
+	  		<Link className="underline" to="/all-products">
 	  			<button className="button__all">All Products</button>
 	  		</Link>
 	  	</div>

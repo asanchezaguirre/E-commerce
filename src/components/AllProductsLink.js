@@ -63,7 +63,7 @@ componentDidMount(){
 	  		{
 	  			this.state.productsAllLink.map((product)=>{
 	  		return 	<div className="container__details">
-		  				<Link to={`/product/${product._id}`}>
+		  				<Link className="underline" to={`/product/${product._id}`}>
 			  				<div>
 					  			<img src={product.imageLink}/>
 					  		</div>
