@@ -48,7 +48,7 @@ componentDidMount(){
 
   render() {
     return (
-      <div className="all__container">
+      <div className="subtitulos">
       	<h2>All Products</h2>
       	<p>All available listings</p>
       	<div className="all__container__buttons">
@@ -57,18 +57,18 @@ componentDidMount(){
       	</div>
       	<div className="all__container__count">
       		<div className="all__container__count-1">{this.state.productsAllLink.length}</div>
-      		<div className=" onClick={this.fetchProductsOnSale}all__container__count-2">items showing</div>
+      		<div className="all__container__count-2"><p>items showing</p></div>
       	</div>
-      	<div className="all__container__products">
+      	<div className="container__products">
 	  		{
 	  			this.state.productsAllLink.map((product)=>{
-	  		return 	<div className="all__container__details">
+	  		return 	<div className="container__details">
 		  				<Link to={`/product/${product._id}`}>
 			  				<div>
 					  			<img src={product.imageLink}/>
 					  		</div>
-					  		<div className="all__product__details">
-						  		<p>{product.item}</p>
+					  		<div className="product__details">
+						  		<h4>{product.item}</h4>
 						  		<p>{product.price}</p>
 						  	</div>
 					  	</Link>

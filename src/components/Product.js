@@ -27,22 +27,22 @@ showProduct = (productId) => {
 }
   render() {
     return (
-      <div>
-      	<div>
+      <div className= "container__data">
+      	<div className= "container__data-img">
       		<img src={this.state.product.imageLink}></img>
       	</div>
-      		<div>{this.state.product.item}</div>
-      		<p>${this.state.product.price}</p>
-      		<hr/>
-      		<div>
-      			<div>Condition</div>
-      			<div>{this.state.product.condition}</div>
-      			<div>Measurements</div>
-      			<div>W:{this.state.product.width} L:{this.state.product.length} H:{this.state.product.height}</div>
-      			<div><button onClick={ () => this.props.appendCart(this.state.product)} >Add to Cart</button></div>
-      		</div>
-      	<div>
-      	</div>
+          <div className= "container__data-data">
+        		<div className= "container__data-datat">{this.state.product.item}</div>
+        		<p>${this.state.product.price}</p>
+        		<hr/>
+        		<div className="container__data-charac">
+        			<div className="container__data-charact">Condition<div>{this.state.product.condition}</div></div>
+        			
+        			<div className="container__data-charact">Measurements<div>W:{this.state.product.width} L:{this.state.product.length} H:{this.state.product.height}</div></div>
+        			
+        			<div><button onClick={ () => this.props.appendCart(this.state.product)} >Add to Cart</button></div>
+        		</div>
+      	  </div>
       </div>
     );
   }

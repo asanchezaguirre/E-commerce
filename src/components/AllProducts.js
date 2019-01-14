@@ -47,8 +47,8 @@ componentDidMount(){
 					  			<img src={product.imageLink} alt="Logo de Mallory Furniture"></img>
 					  		</div>
 					  		<div className="product__details">
-						  		<p>{product.item}</p>
-						  		<p>{product.price}</p>
+						  		<h4>{product.item}</h4>
+						  		<p>${product.price}</p>
 						  	</div>
 					  	</Link>
 				  	</div>

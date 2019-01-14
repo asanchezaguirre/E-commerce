@@ -11,7 +11,7 @@ class Cart extends Component {
             <div>
               <h3 className="ShoppingCart__title">Your Cart</h3>
               <button onClick={this.props.displayCart} className="ShoppingCart__close">
-                <img src="https://cdn3.iconfinder.com/data/icons/interface/100/close_button-512.png" />
+                <i class="fas fa-times"></i>
               </button>
               </div>
           </header>
@@ -20,6 +20,9 @@ class Cart extends Component {
             {this.props.cartAdd.map(item => {
               return (
               <li className="Grid Item">
+                <div>
+                  <button onClick= {(e) => this.props.deleteCart(item)}><i className="fas fa-times" /></button>
+                </div>
                 <div className="Item__Cover">
                   <img className="ShoppingCart__img" src={ item.imageLink } />
                 </div>
@@ -28,17 +31,11 @@ class Cart extends Component {
                     <div className="Grid Grid--expanded">
                       <div>
                         <h3>{ item.item }</h3>
-                        <span>More text</span>
                       </div>
-                      <div>
-                        <button onClick= {(e) => this.props.deleteCart(item)}><i className="fa fa-trash" /></button>
-                      </div>
+                      
                     </div>
                   </div>
                   <div className="Grid Grid--expanded Grid--center Item--ts">
-                    <select>
-                      <option>1</option>
-                    </select>
                     <p>${ item.price }</p>
                   </div>
                 </div>

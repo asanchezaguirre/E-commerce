@@ -12,7 +12,7 @@ class Nav extends Component {
         		<Link to="/"><img src={logo} alt= "Mallory Furniture"></img></Link>
         		<ul className="navegacion__seccion1">
         			<Link to="/about"><li>About</li></Link>
-        			<li><Link to='/terms'>Terms + Conditions</Link></li>
+        			<Link to='/terms'><li>Terms + Conditions</li></Link>
         			<li>|</li>
         			<Link to="/all-products"><li>All</li></Link>
         		</ul>

@@ -94,16 +94,18 @@ changeImage = (categoryType) => {
   
     return (
       <div className="all__container">
-      <img src={this.changeImage(this.props.match.params.categoryType)}></img>
-      <h2>{this.props.match.params.categoryType.toUpperCase()}</h2>
-      	<p>All {this.props.match.params.categoryType} products </p>
+      <img id="imagen__cambia" src={this.changeImage(this.props.match.params.categoryType)}></img>
+        <div className="subtitulos">
+          <h2>{this.props.match.params.categoryType.toUpperCase()}</h2>
+        	<p>All {this.props.match.params.categoryType} products </p>
+        </div>
       	<div className="all__container__buttons">
       		<button onClick={this.allProducts}>All Items</button>
       		<button onClick={this.sale}>On sale</button>
       	</div>
       	<div className="all__container__count">
       		<div className="all__container__count-1">{this.state.categories.length}</div>
-      		<div className="all__container__count-2">items showing</div>
+      		<div className="all__container__count-2"><p>items showing</p></div>
       	</div>
       		
       	<div className="all__container__products">
