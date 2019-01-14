@@ -20,7 +20,7 @@ componentDidMount(){
 	});
 }
 
- allItems = (e) => {
+ allProducts = (e) => {
     request
     .get('https://mallory-furniture-admin.now.sh/api/v1/products')
     .then((res)=>{
@@ -30,7 +30,7 @@ componentDidMount(){
     })
   }
 
-  onSale = (e) => {
+  sale = (e) => {
     request
     .get('https://mallory-furniture-admin.now.sh/api/v1/products')
     .then((res)=>{
@@ -52,8 +52,8 @@ componentDidMount(){
       	<h2>All Products</h2>
       	<p>All available listings</p>
       	<div className="all__container__buttons">
-      		<button onClick={this.allItems}>All Items</button>
-      		<button onClick={this.onSale}>On sale</button>
+      		<button onClick={this.allProducts}>All Items</button>
+      		<button onClick={this.sale}>On sale</button>
       	</div>
       	<div className="all__container__count">
       		<div className="all__container__count-1">{this.state.productsAllLink.length}</div>

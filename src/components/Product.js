@@ -39,7 +39,7 @@ showProduct = (productId) => {
       			<div>{this.state.product.condition}</div>
       			<div>Measurements</div>
       			<div>W:{this.state.product.width} L:{this.state.product.length} H:{this.state.product.height}</div>
-      			<div><button>Add to Cart</button></div>
+      			<div><button onClick={ () => this.props.appendCart(this.state.product)} >Add to Cart</button></div>
       		</div>
       	<div>
       	</div>
